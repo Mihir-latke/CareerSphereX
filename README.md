@@ -1,0 +1,2 @@
+# CareerSphereX
+Database structure 
