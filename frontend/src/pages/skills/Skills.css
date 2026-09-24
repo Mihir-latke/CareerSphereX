@@ -1,0 +1,80 @@
+.skills-page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.skills-add-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: var(--space-3);
+  align-items: end;
+  margin-bottom: var(--space-6);
+}
+@media (max-width: 760px) {
+  .skills-add-form { grid-template-columns: 1fr; }
+}
+
+.skills-add-form .field { margin-bottom: 0; }
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  gap: var(--space-4);
+}
+
+.skill-row-main { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+.skill-row-name { font-weight: 600; }
+.skill-row-category {
+  font-size: var(--fs-caption);
+  color: var(--color-ink-faint);
+}
+
+.skill-level-pill {
+  font-size: var(--fs-micro);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+}
+.skill-level-pill.EXPERT { color: var(--color-waypoint-strong); border-color: var(--color-waypoint); }
+.skill-level-pill.ADVANCED { color: var(--color-route-strong); border-color: var(--color-route); }
+
+.skill-row-actions { display: flex; gap: var(--space-2); flex-shrink: 0; }
+
+.icon-btn {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-ink-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: border-color var(--dur-fast) var(--ease-chart), color var(--dur-fast) var(--ease-chart);
+}
+.icon-btn:hover { border-color: var(--color-hazard); color: var(--color-hazard-strong); }
+
+.skills-empty {
+  text-align: center;
+  padding: var(--space-7) var(--space-4);
+  color: var(--color-ink-faint);
+}

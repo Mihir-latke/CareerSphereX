@@ -1,0 +1,32 @@
+.coming-soon-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-8) 0;
+  max-width: 560px;
+}
+
+.coming-soon-page h1 {
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: 2rem;
+}
+
+.coming-soon-page p {
+  color: var(--color-text-muted, #8892a4);
+  line-height: 1.7;
+  margin: 0 0 var(--space-6);
+}
+
+.coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-accent, #c9a84c) 15%, transparent);
+  color: var(--color-accent, #c9a84c);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid color-mix(in srgb, var(--color-accent, #c9a84c) 35%, transparent);
+}

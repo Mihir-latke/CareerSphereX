@@ -1,0 +1,123 @@
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 860px) {
+  .auth-shell { grid-template-columns: 1fr; }
+}
+
+/* Left: cartographic panel */
+.auth-panel {
+  position: relative;
+  background: var(--color-chart);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  padding: var(--space-8) var(--space-7);
+  overflow: hidden;
+}
+.auth-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 18% 22%, rgba(201, 162, 75, 0.10), transparent 42%),
+                     radial-gradient(circle at 82% 78%, rgba(76, 156, 130, 0.10), transparent 45%);
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .auth-panel { display: none; }
+}
+
+.auth-panel-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 420px;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--fs-body-l);
+  font-weight: 600;
+  margin-bottom: var(--space-7);
+  letter-spacing: 0.01em;
+}
+
+.auth-panel-title {
+  font-size: var(--fs-display-l);
+  line-height: 1.18;
+  color: var(--color-ink);
+  margin-bottom: var(--space-6);
+}
+.auth-panel-title em {
+  font-style: italic;
+  color: var(--color-route-strong);
+}
+
+.auth-route {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: var(--space-5);
+}
+.auth-route-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  font-size: var(--fs-body);
+  color: var(--color-ink-muted);
+}
+.auth-route-line {
+  position: absolute;
+  left: 3px;
+  top: 100%;
+  width: 1px;
+  height: 20px;
+  background-image: linear-gradient(var(--color-border) 50%, transparent 50%);
+  background-size: 1px 6px;
+}
+
+.auth-panel-caption {
+  font-size: var(--fs-caption);
+  color: var(--color-ink-faint);
+  max-width: 340px;
+  margin: 0;
+}
+
+/* Right: form side */
+.auth-form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.auth-form-card {
+  width: 100%;
+  max-width: 380px;
+}
+
+.auth-form-title {
+  font-size: var(--fs-display-m);
+  margin-top: var(--space-2);
+}
+
+.auth-form-subtitle {
+  color: var(--color-ink-muted);
+  font-size: var(--fs-body);
+  margin-bottom: var(--space-5);
+}
+
+.auth-form-footer {
+  margin-top: var(--space-5);
+  font-size: var(--fs-body);
+  color: var(--color-ink-muted);
+  text-align: center;
+}

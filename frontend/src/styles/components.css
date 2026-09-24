@@ -1,0 +1,118 @@
+@import './variables.css';
+
+/* ---------- Card (3D Clay Pillowy Surface) ---------- */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-clay);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: var(--space-5);
+  position: relative;
+  transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-clay-lg);
+}
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-weight: 700;
+  font-size: var(--fs-body);
+  cursor: pointer;
+  transition: all var(--dur-fast);
+  white-space: nowrap;
+}
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.btn-primary {
+  background: var(--color-route);
+  color: var(--color-route-ink);
+  box-shadow: var(--shadow-clay-btn);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-route-strong);
+  box-shadow: 0 8px 22px -2px rgba(108, 92, 231, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  color: var(--color-ink);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--color-route);
+  color: var(--color-route);
+  background: var(--color-route-light);
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: var(--fs-caption);
+  border-radius: var(--radius-pill);
+}
+
+.btn-block { width: 100%; }
+
+/* ---------- Input ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.field-label, label {
+  font-size: var(--fs-caption);
+  color: var(--color-ink-muted);
+  font-weight: 600;
+}
+
+.field-input, .input, input, select, textarea {
+  background: #FAF7F2;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-m);
+  padding: 12px 16px;
+  color: var(--color-ink);
+  font-size: var(--fs-body);
+  transition: all var(--dur-fast);
+  box-sizing: border-box;
+}
+
+.field-input::placeholder, input::placeholder, textarea::placeholder {
+  color: var(--color-ink-faint);
+}
+
+.field-input:focus, .input:focus, input:focus, select:focus, textarea:focus {
+  border-color: var(--color-route);
+  background: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.15);
+  outline: none;
+}
+
+.field-error {
+  font-size: var(--fs-caption);
+  color: var(--color-hazard-strong);
+  font-weight: 600;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  text-transform: uppercase;
+}

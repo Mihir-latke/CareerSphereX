@@ -1,0 +1,36 @@
+.applicants-page { display: flex; flex-direction: column; gap: var(--space-5); }
+.applicants-header { display: flex; flex-direction: column; gap: var(--space-2); }
+.back-link { color: var(--color-ink-muted); font-size: var(--fs-caption); text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+.back-link:hover { color: var(--color-route); }
+.applicants-title { font-size: clamp(1.4rem, 2.5vw, 2rem); margin: 0 0 4px; }
+.applicants-sub { color: var(--color-ink-muted); margin: 0; font-size: var(--fs-caption); }
+
+.applicants-funnel { display: flex; gap: 0; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-m); overflow: hidden; flex-wrap: wrap; }
+.funnel-item { flex: 1; min-width: 80px; padding: var(--space-4) var(--space-3); text-align: center; border-right: 1px solid var(--color-border-soft); }
+.funnel-item:last-child { border-right: none; }
+.funnel-num { font-size: 1.5rem; font-weight: 800; font-family: var(--font-display); }
+.funnel-label { font-size: var(--fs-micro); color: var(--color-ink-faint); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 2px; }
+
+.applicants-error { color: var(--color-hazard-strong); background: rgba(193,89,75,0.1); border: 1px solid rgba(193,89,75,0.3); border-radius: var(--radius-s); padding: var(--space-3); }
+.applicants-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.applicant-skeleton { height: 96px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-l); animation: shimmer 1.5s infinite; }
+@keyframes shimmer { 0%,100%{opacity:1} 50%{opacity:.4} }
+.applicants-empty { background: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--radius-l); padding: var(--space-8) var(--space-6); text-align: center; }
+.applicants-empty h3 { margin: 0 0 var(--space-2); } .applicants-empty p { color: var(--color-ink-muted); margin: 0; }
+
+.applicant-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-l); padding: var(--space-4) var(--space-5); display: flex; align-items: flex-start; gap: var(--space-4); transition: border-color var(--dur-fast); flex-wrap: wrap; }
+.applicant-card:hover { border-color: var(--color-border-soft); }
+.applicant-avatar { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; font-size: 1rem; flex-shrink: 0; letter-spacing: -0.5px; }
+.applicant-info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.applicant-name { font-weight: 700; font-size: var(--fs-body-l); color: var(--color-ink); }
+.applicant-email { font-size: var(--fs-caption); color: var(--color-ink-muted); }
+.applicant-cover { font-size: var(--fs-caption); color: var(--color-ink-muted); margin: 4px 0 0; line-height: 1.6; font-style: italic; }
+.applicant-meta { font-size: var(--fs-micro); color: var(--color-ink-faint); margin-top: 4px; display: flex; align-items: center; gap: var(--space-3); flex-wrap: wrap; }
+.resume-link { color: var(--color-route); font-weight: 600; text-decoration: none; }
+.resume-link:hover { color: var(--color-route-strong); }
+
+.applicant-actions { display: flex; align-items: center; gap: var(--space-2); flex-shrink: 0; }
+.current-status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.status-select { background: var(--color-chart); border: 1px solid; border-radius: var(--radius-s); padding: 8px 28px 8px 12px; font-size: var(--fs-caption); font-weight: 700; font-family: var(--font-body); cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236b7594' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; transition: border-color var(--dur-fast); min-width: 130px; }
+.status-select:focus { outline: none; }
+.status-select option { background: var(--color-surface); color: var(--color-ink); font-weight: 600; }
