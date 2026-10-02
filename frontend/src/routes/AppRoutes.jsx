@@ -15,6 +15,7 @@ import Interview from '../pages/interview/Interview'
 import PostJob from '../pages/recruiter/PostJob'
 import RecruiterJobs from '../pages/recruiter/RecruiterJobs'
 import Applicants from '../pages/recruiter/Applicants'
+import BrowseJobs from '../pages/browse/BrowseJobs'
 import DashboardLayout from '../components/layout/DashboardLayout'
 import NotFound from '../pages/errors/NotFound'
 import ProtectedRoute from './ProtectedRoute'
@@ -47,6 +48,7 @@ export default function AppRoutes() {
         {/* Job board */}
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/jobs/:id" element={<JobDetail />} />
+        <Route path="/browse" element={<BrowseJobs />} />
 
         {/* Candidate */}
         <Route path="/applications" element={<Applications />} />

@@ -175,3 +175,44 @@
 .job-tag { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: var(--fs-micro); font-weight: 700; letter-spacing: 0.03em; border: 1px solid; text-transform: uppercase; }
 .job-tag-neutral { background: rgba(156,166,194,0.1); color: var(--color-ink-muted); border-color: var(--color-border); }
 .job-card-salary { font-weight: 700; font-size: var(--fs-caption); color: var(--color-route-strong); }
+
+/* ── External Job Platform Quick Links ── */
+.job-card-external-links {
+  padding-top: 10px;
+  border-top: 1px dashed #EAE3DB;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.job-ext-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9AA2B5;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.job-ext-btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.job-ext-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.15s;
+  border: 1px solid;
+}
+.job-ext-btn:hover { transform: translateY(-1px); text-decoration: none; }
+.job-ext-btn.linkedin { background: #E8F0FA; color: #0A66C2; border-color: #0A66C2; }
+.job-ext-btn.linkedin:hover { background: #0A66C2; color: white; }
+.job-ext-btn.naukri { background: #FFF0ED; color: #FF7555; border-color: #FF7555; }
+.job-ext-btn.naukri:hover { background: #FF7555; color: white; }
+.job-ext-btn.internshala { background: #E8F4FD; color: #007BFF; border-color: #007BFF; }
+.job-ext-btn.internshala:hover { background: #007BFF; color: white; }
+

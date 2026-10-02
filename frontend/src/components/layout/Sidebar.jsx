@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext'
 const CANDIDATE_SECTIONS = [
   { path: '/dashboard', label: 'Dashboard', icon: '🏠' },
   { path: '/jobs', label: 'Browse Jobs', icon: '💼' },
+  { path: '/browse', label: 'Job Aggregator', icon: '🌐' },
   { path: '/applications', label: 'Applications', icon: '📄' },
   { path: '/profile', label: 'My Profile', icon: '👤' },
   { path: '/careers', label: 'Careers', icon: '🧭' },

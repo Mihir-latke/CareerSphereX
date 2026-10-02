@@ -158,6 +158,31 @@ export default function Jobs() {
                   </div>
                 )}
               </div>
+
+              {/* External Quick-Apply Links */}
+              <div className="job-card-external-links" onClick={e => e.preventDefault()}>
+                <span className="job-ext-label">Also apply on:</span>
+                <div className="job-ext-btns">
+                  <a
+                    href={`https://www.linkedin.com/jobs/search/?keywords=${encodeURIComponent(job.jobTitle + ' ' + (job.companyName || ''))}&location=India`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="job-ext-btn linkedin"
+                    title="Search on LinkedIn"
+                  >💼 LinkedIn</a>
+                  <a
+                    href={`https://www.naukri.com/${encodeURIComponent((job.jobTitle || 'developer').toLowerCase().replace(/\s+/g,'-'))}-jobs${job.location ? `-in-${encodeURIComponent(job.location.toLowerCase().replace(/\s+/g,'-'))}` : ''}`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="job-ext-btn naukri"
+                    title="Search on Naukri"
+                  >🏢 Naukri</a>
+                  <a
+                    href={`https://internshala.com/internships/${encodeURIComponent((job.jobTitle || 'developer').toLowerCase().replace(/\s+/g,'-'))}-internship`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="job-ext-btn internshala"
+                    title="Search on Internshala"
+                  >🎓 Internshala</a>
+                </div>
+              </div>
             </Link>
           ))}
         </div>

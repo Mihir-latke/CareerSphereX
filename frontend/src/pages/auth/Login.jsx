@@ -24,7 +24,12 @@ export default function Login() {
       await login(form.email, form.password)
       navigate('/dashboard')
     } catch (err) {
-      setError(err.message || 'Could not sign in. Check your details and try again.')
+      // Give a clear message if backend is offline
+      if (err.message === 'Failed to fetch' || err.name === 'TypeError') {
+        setError('⚠️ Cannot reach the server. Please make sure the backend is running on port 8080.')
+      } else {
+        setError(err.message || 'Invalid email or password. Please try again.')
+      }
     } finally {
       setLoading(false)
     }
@@ -33,11 +38,11 @@ export default function Login() {
   return (
     <AuthLayout
       eyebrow="Welcome back"
-      title="Sign in to your route"
+      title="Sign in to CareerSphereX"
       subtitle="Pick up where you left off."
       footer={
         <>
-          New to CareerSphereX? <Link to="/register">Chart your route</Link>
+          New to CareerSphereX? <Link to="/register">Create account</Link>
         </>
       }
     >
@@ -46,7 +51,7 @@ export default function Login() {
           id="email"
           name="email"
           type="email"
-          label="Email"
+          label="Email address"
           placeholder="you@email.com"
           value={form.email}
           onChange={handleChange}
@@ -65,7 +70,20 @@ export default function Login() {
           required
         />
 
-        {error && <p className="field-error" style={{ marginTop: -8, marginBottom: 16 }}>{error}</p>}
+        {error && (
+          <div style={{
+            background: '#FFF0F2',
+            border: '1px solid #FECDD3',
+            borderRadius: 12,
+            padding: '10px 14px',
+            marginBottom: 16,
+            fontSize: '0.85rem',
+            color: '#B91C1C',
+            fontWeight: 600,
+          }}>
+            {error}
+          </div>
+        )}
 
         <div style={{ textAlign: 'right', marginBottom: 20 }}>
           <Link to="/forgot-password" style={{ fontSize: 'var(--fs-caption)' }}>
@@ -76,6 +94,20 @@ export default function Login() {
         <Button type="submit" block disabled={loading}>
           {loading ? 'Signing in…' : 'Sign in'}
         </Button>
+
+        {/* Backend status hint */}
+        <div style={{
+          marginTop: 14,
+          padding: '8px 12px',
+          background: '#F0FDF4',
+          border: '1px solid #BBF7D0',
+          borderRadius: 10,
+          fontSize: '0.75rem',
+          color: '#166534',
+          textAlign: 'center',
+        }}>
+          💡 Make sure backend is running: <code style={{ background: '#DCFCE7', padding: '1px 5px', borderRadius: 4 }}>mvn spring-boot:run</code>
+        </div>
       </form>
     </AuthLayout>
   )
